@@ -30,7 +30,7 @@ First we should attempt to get a little more of a ``floating'' sound and make it
 %e.g. \begin{figure}[!htb]
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=90mm]{pics/vocal_workshop1_sol_2.gif}
+	\includegraphics[width=90mm]{pics/vocal_workshop1_sol_2.png}
 	\caption{Fattening: Solution 2}
 	\label{vocal_1_sol_2}
 \end{figure}
@@ -179,7 +179,7 @@ linear: a function is linear exclusively while:
 \begin{enumerate}
 	\item $f(a\cdot x) = a \cdot f(x) \with a=\const$
 	\item $f(x+y) = f(x)+f(y)$
-	\item Can be combined to $f(a\cdot x+b \cdot y)=a \cdot f(x)+b \Cdot f(y) \with a,b=\const$
+	\item Can be combined to $f(a\cdot x+b \cdot y)=a \cdot f(x)+b \cdot f(y) \with a,b=\const$
 \end{enumerate}
 Non-linear functions applied on audio-signals result in a distortion of the wave, which changes it's spectrum in a very weird and very difficult to describe way. Some overtones may be added or amplified while others are dampend, like in a very complex filter. So may we speak of a shaper as a filter?! Nope!
 
@@ -209,7 +209,6 @@ In general a shaper-function is non-linear:
 	
 	Though there is snag: Aliasing. Even if the oscillator is band-limited (free of aliasing), the shaper function adds frequencies to the spectrum which are above half the sampling rate (NYQUIST-frequency). Digital audio systems cannot handle those above-Nyquist-frequencies correctly, but mirrors their frequencies around half the sampling rate, which transforms those overtones into wrong ones (``alias'' tones), sounding dissonant and metallic-like. This is not necessarily awful-sounding , it´s a matter of taste and sound category. E.g., aliasing can add a cool digital spice to aggressive distortion sounds.
 \end{enumerate}
-
 \begin{example}
 	then some example for the function $f$ to generate some nice waveshaping:
 	\begin{enumerate}
@@ -224,9 +223,9 @@ In general a shaper-function is non-linear:
 		%e.g. \begin{figure}[!htb]
 		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=90mm]{pics/xt_midi_chart.jpg}
-			\caption{MIDI CC numbers and their associated knobs}
-			\label{midi_cc_interface}
+			\includegraphics[width=90mm]{pics/parabolic_1.png}
+			\caption{Graph for function $x^2$}
+			\label{graph_quad}
 		\end{figure}
 		\bigskip % Add an empty line
 		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
@@ -238,9 +237,9 @@ In general a shaper-function is non-linear:
 		%e.g. \begin{figure}[!htb]
 		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=90mm]{pics/xt_midi_chart.jpg}
-			\caption{MIDI CC numbers and their associated knobs}
-			\label{midi_cc_interface}
+			\includegraphics[width=90mm]{pics/parabolic_2.png}
+			\caption{$n$ samples over $n$-th sample}
+			\label{graph_samples}
 		\end{figure}
 		\bigskip % Add an empty line
 		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
@@ -252,77 +251,180 @@ In general a shaper-function is non-linear:
 		%e.g. \begin{figure}[!htb]
 		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=90mm]{pics/xt_midi_chart.jpg}
-			\caption{MIDI CC numbers and their associated knobs}
+			\includegraphics[width=90mm]{pics/parabolic_1.png}
+			\caption{$f$ with $n$-th sample.}
 			\label{midi_cc_interface}
 		\end{figure}
 		\item Exponentiator via $f(x)=a \cdot exp(b\cdot x)$ with constants $a,b$: ...is often used for controller-signals. Using this a synthesizer computes the frequency of its oscillator deriving from the note-number. In general all logarithmically scaled parameters like volume, LFO-Rate and envelope-times are transformed this way.
+		\bigskip % Add an empty line
+		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+		%
+		%h, here
+		%t, top
+		%b, bottom
+		%p, page of float
+		%e.g. \begin{figure}[!htb]
+		\begin{figure}[ht!]
+			\centering
+			\includegraphics[width=90mm]{pics/exp.png}
+			\caption{Exponential function}
+			\label{exp_function}
+		\end{figure}
 		\item Hard-clipping via $f(x)= {x, for |x|<1}$ with the absolute value, which splits into two sets: ${+1, for x>+1}$ and
 		${-1, for x<-1}$
+		\bigskip % Add an empty line
+		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+		%
+		%h, here
+		%t, top
+		%b, bottom
+		%p, page of float
+		%e.g. \begin{figure}[!htb]
+		\begin{figure}[ht!]
+			\centering
+			\includegraphics[width=90mm]{pics/clip_1.png}
+			\caption{Graph for $f$}
+			\label{hard_clip_function}
+		\end{figure}
+		\bigskip % Add an empty line
+		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+		%
+		%h, here
+		%t, top
+		%b, bottom
+		%p, page of float
+		%e.g. \begin{figure}[!htb]
+		\begin{figure}[ht!]
+			\centering
+			\includegraphics[width=90mm]{pics/clip_2.png}
+			\caption{$n$ samples over $n$-th sample}
+			\label{samples_nth_sample}
+		\end{figure}
+		\bigskip % Add an empty line
+		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+		%
+		%h, here
+		%t, top
+		%b, bottom
+		%p, page of float
+		%e.g. \begin{figure}[!htb]
+		\begin{figure}[ht!]
+			\centering
+			\includegraphics[width=90mm]{pics/clip_3.png}
+			\caption{$f$ with $n$-th sample.}
+			\label{hard_clip_sample}
+		\end{figure}
+	The signal $x$ gets abruptly limited to the range of $[-1;+1]$. Dull waves are enriched with many harmonics. While using as filter-overdrive, the result sounds harsh scratching, works great for biting aggressive sounds.
+	\item Soft-clipping / saturation: for example: $f(x)=(\arctan x)/pi$
+	or $f(x)=(\sign x) \cdot (1-0,25/(\abs{+0,25}))$ (build up of hyperbolics) or
+	\begin{align*}
+		f(x) = \begin{cases}
+			1-(x-1)^2 &\for 0\leq x < 1\\
+			-1+(x+1)^2 &\for -1 f(x)=\sign x \nd \for \abs{x}\geq 1
+		\end{cases}
+	\end{align*}
+	The signal $x$ is smoothly limited to the range of $[-1;+1]$. Contrary to hard-clipping, the signal is not cut abruptly, but follows the smooth transition to the saturation value. This enriches dull sounds with more low and middle than with high harmonics. There are many possible functions for this same effect, but they all sound different.\\
+	Analog tapes creates a similar saturation-behaviour which provides a mix with a warm characteritic. (Because of this behviour many producers prefer to work with old tape decks rather than using digital epuipment.)\\
+	This effect is also suitable for filter-overdrive: decreasing amplification before saturation results in a warm, smooth grunge. Using extremely high pre-amplification ends up with a harshness equal to hard-clipping.
+	\bigskip % Add an empty line
+	%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+	%
+	%h, here
+	%t, top
+	%b, bottom
+	%p, page of float
+	%e.g. \begin{figure}[!htb]
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=90mm]{pics/soft_clip_1.png}
+		\caption{Graph of the Arctan function}
+		\label{hard_clip_sample}
+	\end{figure}
+	\bigskip % Add an empty line
+	%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+	%
+	%h, here
+	%t, top
+	%b, bottom
+	%p, page of float
+	%e.g. \begin{figure}[!htb]
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=90mm]{pics/soft_clip_2.png}
+		\caption{Give Arctan the Samples as input}
+		\label{hard_clip_sample}
+	\end{figure}
 	\end{enumerate}
 \end{example}
-c) 
-
-The signal x gets abruptly limited to the range of [-1;+1]. Dull waves are enriched with many harmonics. While using as filter-overdrive, the result sounds harsh scratching, works great for biting agressive sounds.
-
-
-
-d) Soft-clipping / saturation: e.g. f(x)=(arctan x)/pi
-or
-f(x)=(sign x) *(1-0,25/(|x|+0,25)) (build up of hyperbolics)
-or
-f(x)=1-(x-1)² , for 0<=x<1; |
-f(x)=-1+(x+1)² , for -1 f(x)=sign x , for |x|>=1 |
-
-The signal x is smoothly limited to the range of [-1;+1]. Contrary to hard-clipping, the signal is not cut abruptly, but follows the smooth transition to the saturation value. This enriches dull sounds with more low and middle than with high harmonics. There are many possible functions for this same effect, but they all sound different.
-
-Analog tapes creates a similar saturation-behaviour which provides a mix with a warm characteritic. (Because of this behviour many producers prefer to work with old tape decks rather than using digital epuipment.)
-
-This effect is also suitable for filter-overdrive: decreasing amplification before saturation results in a warm, smooth grunge. Using extremely high pre-amplification ends up with a harshness equal to hard-clipping.
-
-
-
-2)Mixer-Clipping: Overflow and Saturation
-as described on page 46 in the manual.
-
-The mixer of the oscillator section applies it´s own waveshaper (with 2 selectable functions) on the sum of the input signals (ringmod + noise + wave1 + wave2), limiting the output to the range [-M;+M], with:
-
-M: maximal mixer output amplitude
+2)Mixer-Clipping: Overflow and Saturation as described on page 46 in the manual. \todo{reference to MW manual}. The mixer of the oscillator section applies its own waveshaper (with 2 selectable functions) on the sum of the input signals (ringmod + noise + Wave 1 + Wave2), limiting the output to the range $[-M;+M]$, with: $M$ - maximal mixer output amplitude
 
 (though the ROM and RAM waves are stored in only 8 bit resolution (quantizing to 256 steps), the output of each oscillator is a smooth interpolated 24 bit depth signal. the Motorola 56303 DSP inside the MW2 computes with 24 bit fixpoint numbers, providing 16.7 million equally big quantization steps.)
 
 The "saturation" mode does hardclipping.
 
-"Overflow" distortion mode: to samples of the mixer sum, which are in the forbidden range of x>+M OR x<-M, the values -2M or +2M, respectively, are added. This simulates the numeric overflow of the µ-Wave1 and PPG Wave. The harsh transitions generated by the overflow-clipping are equivalent to adding pulse-waves (with variable pulse width).
+"Overflow" distortion mode: to samples of the mixer sum, which are in the forbidden range of $x>+M$ OR $x<-M$, the values $-2M$ or $+2M$, respectively, are added. This simulates the numeric overflow of the µ-Wave1 and PPG Wave. The harsh transitions generated by the overflow-clipping are equivalent to adding pulse-waves (with variable pulse width).
 Another way to visualize overflow:
 if the level of the mixer-sum is beyond legal range, some "magic" pulse-waves are mixed into it (see graphics). Those pulse wides can be well-directed adjusted by modulating the amplitudes of the mixer-input-sources.
-
-Overflow function: f(x)= {x, for |x|<=M}
-{x-2M, for +M {x+2M, for -3M<=x<-M}
-	
-	(this formula is applicable only if wave1+2 and ringmod are chosen in the mixer. This way the sum never exceeds 3M. If noise or the external input is engaged as well, any sum-sample may overflow even two times.)
-	
-	
+Overflow function:
+\begin{align*}
+	f(x) = {x, \for \abs{x} \leq M} = \begin{cases}
+		x-2M  &\for +M\\
+		x+2M  &\for -3M\leq x < -M
+	\end{cases}
+\end{align*}
+	(this formula is applicable only if Wave 1+2 and RM are chosen in the mixer. This way the sum never exceeds $3M$. If noise or the external input is engaged as well, any sum-sample may overflow even two times.)
+	\bigskip % Add an empty line
+	%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+	%
+	%h, here
+	%t, top
+	%b, bottom
+	%p, page of float
+	%e.g. \begin{figure}[!htb]
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=90mm]{pics/mixer_clipping.png}
+		\caption{Shows how the output is affected by the steps}
+		\label{mixer_clipping}
+	\end{figure}
 	
 	...always beware of overflow introducing heavy aliasing.
 	
-	3) Sin(x)->LP-Filter
-	Here is a sine-shaper inserted after the mixer and BEFORE a 12dB-LP-filter. Because the mixer-output is always within the values of [-M ; +M], the definition range (possible x values) [-M ; +M] is sufficient for the shaping function. At increasing amplitude the input-signal first gets compressed softly at the upper and lower peaks. As the amplitude exceeds the M/2-threshold, peaks get wrapped towards the zero axis.
+	3) $\sin(x)\to$ LP-Filter
+	Here is a sine-shaper inserted after the mixer and BEFORE a 12dB-LP-filter. Because the mixer-output is always within the values of $[-M , +M]$, the definition range (possible $x$ values) $[-M, +M]$ is sufficient for the shaping function. At increasing amplitude the input-signal first gets compressed softly at the upper and lower peaks. As the amplitude exceeds the $M/2$-threshold, peaks get wrapped towards the zero axis.
 	
-	Sinus-Shaper: f(x) = M * sin (p /M * x), -M <= x <= +M
-	
-	
-	
-	
-	
-	example: 2 waves of increasing amplitude becoming more and more squeezed:
-	
-	
-	
-	
-	
-	
-	
+	Sinus-Shaper: $f(x) = M \cdot \sin(p /M \cdot x) \for -M \leq x \leq +M$
+	\bigskip % Add an empty line
+	%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+	%
+	%h, here
+	%t, top
+	%b, bottom
+	%p, page of float
+	%e.g. \begin{figure}[!htb]
+	\begin{figure}[ht!]
+		\centering
+		\includegraphics[width=90mm]{picswave_shapping_filter.png}
+		\caption{Shows how the output is affected by the steps}
+		\label{mixer_clipping}
+	\end{figure}
+	\begin{example}
+		2 waves of increasing amplitude becoming more and more squeezed:
+		\bigskip % Add an empty line
+		%These are optional parameters to finetune the placement of tables and figures, with the following meaning:
+		%
+		%h, here
+		%t, top
+		%b, bottom
+		%p, page of float
+		%e.g. \begin{figure}[!htb]
+		\begin{figure}[ht!]
+			\centering
+			\includegraphics[width=90mm]{picswave_shapping_filter.png}
+			\caption{Example with input and output?}
+			\label{mixer_clipping}
+		\end{figure}
+	\end{example}
 	By combining Sin->LP-filter and overflow-mixer-ditortion, the overflow-jumps will be eliminated totally because the signal values -M and +M are bent to zero. The resulting distortion can sound even smoother than engaging saturation type mixer-clipping.
 	
 	4) Waveshaper Filter
@@ -340,17 +442,15 @@ Overflow function: f(x)= {x, for |x|<=M}
 	
 	A wave-cycle is always made of 128 samples. Mostly the wave reveals an odd symmetry: the first half is fetched from ROM/RAM, the second is it's mirror-image on the point (64,5 ; 0). Formally:
 	
-	Wave[65 + n] = -Wave[64 - n], n = 0, ..., 63
-	
+	$\Wave[65 + n] = -\Wave[64 - n]$ for  $n = 0, ..., 63$
 	Among the ROM-wavetables in the µWave2/XT/XTk, WT 65 "True PWM" (which emulates the normal pulse-oscillator) is the only one without this type of symmetry.
 	
 	In the shaper-wave, only samples 32 to 97 are relevant; the first and latter 31 samples are without any effect. Neighbouring shaper-samples are interpolated linearly, giving the function the shape of a continous polygon. Accordingly there are no jumps in it, only steep transitions are possible.
 	
-	The definition range [-2M ; +2M] refers to the sample-range [32,5 ; 96,5].
+	The definition range $[-2M , +2M]$ refers to the sample-range $[32.5 , 96.5]$.
 	
-	E.g: Input-value "-2M" is mapped to the average of samples 32 and 33:
-	f(-2M) = (Wave[32] + Wave[33]) / 2;
-	f(+2M) = (Wave[96] + Wave[97]) / 2;
+	E.g: Input-value $-2M$ is mapped to the average of samples 32 and 33:
+	$f(-2M) = (Wave[32] + Wave[33]) / 2$ and $f(+2M) = (Wave[96] + Wave[97]) / 2$
 	
 	The plot of this function equals the wave-cycle from 90° to 270° (samples 32...97), except that neighbouring samples are connected by a straight line instead of a smooth, round interpolation curve. In the picture "shaper-wave" below the pink frame contains a plot of the corresponding shaping function.
 	
