@@ -7,3 +7,6 @@ Sources:
 (4) The Wavetables: https://hkwad.home.xs4all.nl/waldorf/wavetables.html
 (5) SOS article: https://www.soundonsound.com/techniques/getting-creative-waldorf-microwave-synths
 (6) What else is found suiting to be included!
+(7) Frequency ratios for now only saved here, because they are getting type-set into the PDF.
+
+Also i corrected this bad mathematics typing. It should be much clearer now. PDF version will come, when i finished most of all parts.
