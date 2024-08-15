@@ -37,3 +37,63 @@ This is the description of the PPG Wave 2.2 wavetables as used in the Microwave 
 	spectrum through the whole keyboard range."
 \end{itemize}
 What about the other ones?
+More details: A Visual reference of the XT's preset wavetables.With this type of information is morevaluable when programming the MW2/XT(k). \notes{Not all tables are covered.}
+Here are the Waldorf Microwave2/XT wavetable reference charts I've made so far. When I'm finished, there will be one chart for each preset wavetable in the MW2/XT for a total of 64. I plan to complete these as soon as I can but unfortunately I have a day job and a life outside of synthesizers (hard to believe I know) ^_^
+If you haven't been there already, don't forget to visit the MWXT Main Page.
+This type of information is really useful when programming. Its also a good reference on how to construct musically useful wavetables. 0-60 on the left side of each chart are the "startwave" positions (BTW - 61, 62 \& 63 are the basic "synth" waves - so these are left off) and the red numbers show the Microwave's ROM waveform numbers and their positions within the wavetable. Empty spots are interpolated waves! To the right are graphical depictions of the applicable waves and their associated FFT spectrum.
+\todo{Add all these one per page as the pictures contain the text aswell!}
+
+%001 Resonant
+%Harmonics 1-8 very strong, simulation of a resonant filter.
+%002 Resonant2
+%Similar to 001, but with additional higher harmonics, dual VCF simulation.
+%003 MalletSyn
+%Similar to 001 and 002, but also good for vibes, bells, tubular bells, and so on.
+%004 Sqr-Sweep
+%Sine to square sweep, low resonance VCF simulation, clarinette and flute sounds.
+%005 Bellish
+%Waves 0-48 feature very high harmonics in progressively greater amplitudes. Usefull for delay effects and church bells.
+%006 Pul-Sweep
+%Very high harmonics are emphasized, effects similar to wavetable 016, but more "mixture-like".
+%007 Saw-Sweep
+%Sine to saw sweep, low-resonance VCF effects, also good for woodwinds.
+%008 MellowSaw
+%VCF sweep without resonance, also good for woodwind sounds.
+%009 Feedback
+%Highpass VCF simulation without resonance. Wave 0 has little fundamental whereas wave 24 has fundamental at maximum amplitude. Usefull for dark percussive strings, bass with click-like attack.
+%010 Add Harm
+%Formants and strong middle-range harmonics, usefull for ring-modulation and vocal sounds.
+%011 Reso 3 HP
+%Similar to wavetable 010.
+%012 Wind Syn
+%Low formants. Wave 00 is dark, 32 is bright, 60 is dark.
+%013 High Harm
+%High formants that sweep.
+%014 Clipper
+%Very strong high-order harmonics, the fundamental is weak. Usefull for bright percussive stringed keyboard sounds like clavichord, harpsichord and so on. When swept, you get an AM effect. Wave 00 is maximum amplitude, 24 is minimum amplitude, 60 is maximum. Use great detuning and dissonant low chords for noise effects.
+%015 Organ Syn
+%Several organ registers. Sine, Hammond, Lowrey, Church organs.
+%016 Square Saw
+%Harmonics 2+3 to sawtooth sweep. Usefull for harmonium, accordian, harmonica sounds.
+%017 Formant 1
+%Wild amplitude modulation effects when swept. Several peaks and dips in amplitude.
+%018 Polated
+%Wave 0 features the fundamental and the second harmonic, wave 14 is the fundamental alone, wave 28 has high harmonics and wave 60 is the fundamental alone again.
+%019 Transient
+%When swept produces high-low-high harmonic transient effect.
+%020 Electric P
+%Waves 0 to 28 are stationarry with string upper harmonics and few lower harmonics. Wave 60 has no fundamental. Good for electric "wurly" piano sounds.
+%021 Robotic
+%Fast discrete changes of low and high harmonics for sample-and-hold effects. Wave "0" is a sine wave. Nice "robot voice" with sweeps. You may want to compare this wavetable to wavetables 001 and 002 - note the waves used.
+%022 StrongHrm
+%Sine wave to high frequency formants.
+%023 PercOrgan
+%This wavetable is particularly suited for echoing effects. Waveforms vary from original attack plus one delay to two colored delays. Waves 0, 15, 30 and 44 are sine waves.
+%024 Clip Sweep
+%Strong high harmonics.
+%025 Resonant Harmonics
+%Stationary organs. If swept produces ascending high harmonic sweeps.
+%026 2 Echoes
+%Waves 59 to 49 go from bright to sine wave. 48 to 33 have a colored delay. 33 to 18 are sinewaves. 17 to 00 have a colored delay echo.
+%027 Formant 2
+%Variations on sawtooth waves are strong, bright formants. Good for brass sound. 31 waves alternate with empty slots in increasing order.
