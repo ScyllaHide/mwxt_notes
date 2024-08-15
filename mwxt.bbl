@@ -1,0 +1,28 @@
+@BOOK{xt_Man99,
+AUTHOR="Waldorf Electronics",
+TITLE="Microwave II/XT User Manual",
+YEAR="1999",
+}
+
+@BOOK{XTCookbook,
+AUTHOR="Waldorf Electronics",
+TITLE="microwave II/XT Cookbook",
+YEAR="1999",
+}
+
+@MISC{Car97,
+    HOWPUBLISHED = "\url{https://www.carbon111.com/mwxt.html}",
+    AUTHOR = "James D. Maier",
+    TITLE = "Waldorf Microwave XT - Tips and Tricks",
+    YEAR = "1997,2013",
+    NOTE = "Accessed on 2024-08-15"
+}
+
+@MISC{SOS03,
+    HOWPUBLISHED = "\url{https://www.soundonsound.com/techniques/getting-creative-waldorf-microwave-synths}",
+    AUTHOR = "Richard Leon",
+    TITLE = "Getting Creative with Waldorf microwave Synths",
+    MONTH = "January",
+    YEAR = "2003",
+    NOTE = "Accessed on 2024-08-15"
+}
