@@ -1,10 +1,30 @@
 
-\documentclass[]{article}
+\documentclass[a4paper,12pt,leqno]{article}%{tudscrreprt}% leqno left equation numbering
+%\documentclass[a4paper,12pt]{article}%{tudscrreprt}%
+\def\dotminus{\mathbin{\ooalign{\hss\raise1ex\hbox{.}\hss\cr
+			\mathsurround=0pt$-$}}
+		}
+\usepackage[a4paper,margin=2cm]{geometry}	% margins and paper set
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{ntheorem}
 %\usepackage{package}
 %opening
+% % enviroments without numering
+\newtheoremstyle{plain}%    <name>
+{\topsep}%   <space above>
+{\topsep}%   <space below>
+{\upshape}%  <body font>
+{}%          <indent amount>
+{\bfseries}% <Theorem head font>
+{.}%         <punctuation after theorem head>
+{\newline}%  <space after theorem head> (default .5em)
+{}%          <Theorem head spec>
+\theoremstyle{plain}
+\newtheorem*{example}{Example}
+
 % % % comamnds % % %
 \newcommand{\ul}[1]{\underline{#1}}
 \renewcommand{\emph}[1]{\textit{#1}}
@@ -13,6 +33,10 @@
 \newcommand{\notes}[1]{\textcolor{red}{#1}}
 \newcommand{\todo}[1]{\textcolor{blue}{#1}}
 \newcommand{\idea}[1]{\textcolor{green}{#1}}
+% text stuff in math
+\newcommand{\odd}{\text{odd}}
+\newcommand{\even}{\text{even}}
+\newcommand{\for}{\text{ for }}
 
 \title{Tips and Tricks for WALDORF MicroWave II and the XT Version}
 \author{Ameyah and Various}
@@ -20,17 +44,24 @@
 \begin{document}
 
 \maketitle
-
 \begin{abstract}
 	\noindent
 	This is a collection notes from various authors on tips and tricks for the Microwave II, so that its possible to quickly print them or have them available for browsing. The author of this document is thankful to the other authors of the quotes here.\\
 	\today
 \end{abstract}
 
+\newpage
+
+\tableofcontents
+
+\newpage
+
 \section{Introduction}
 \input{intro}
 \section{Tips and Tricks}
 \input{tips}
+\section{Workshops}
+\input{workshops}
 \section{Information about the wavetables}
 \input{wt}
 \section{MIDI stuff}
